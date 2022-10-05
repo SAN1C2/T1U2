@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100;1,500&display=swap');
+
+
+
+.carrito{
+    margin: auto;
+    padding: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    width: 50%;
+    height: 50%;
+    background-color: brown;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif ;
+  }
+
+  .pago{
+    margin: auto;
+    padding: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    width: 50%;
+    height: 50%;
+    background-color: brown;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif ;
+  }
+  
+  .datosPago{
+    margin: auto;
+    padding: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    width: 50%;
+    height: 50%;
+    background-color: brown;
+    text-align: justify;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif ;
+  }
+  

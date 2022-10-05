@@ -1,5 +1,252 @@
-<h1>hola</h1>
-<h1>hola</h1>
-<h1>hola</h1>
-<h1>hola</h1>
-<h1>hola</h1>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg ">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">Agencia De Viajes</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Sobre Nosotros</a>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          RESERVAS
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Enero : Abril</a></li>
+                          <li><a class="dropdown-item" href="#">Mayo : Agosto</a></li>
+                          <li><a class="dropdown-item" href="#">Septiembre : Diciembre</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                    
+                  </div>
+                </div>
+              </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container text-center">
+            <div class="row">
+
+                <div class="col" class="card" style="width: 18rem;">
+                    <img src={{paquetes[0].img}} class="card-img-top" alt="">
+                    <div class="card-body">
+                      <h5 class="card-title">{{paquetes[0].tour}} </h5>
+                      <p class="card-text">{{paquetes[0].descripcion}} </p>
+                      <p class="card-text"> <span>$</span>{{paquetes[0].precio}} </p>
+                      <button href="#" class="btn btn-primary"(click)="nuevoPaquete">Agregar</button>
+                    </div>
+                  </div>
+
+                  <div class="col" class="card" style="width: 18rem;">
+                    <img src={{paquetes[1].img}} class="card-img-top" alt="">
+                    <div class="card-body">
+                      <h5 class="card-title">{{paquetes[1].tour}} </h5>
+                      <p class="card-text">{{paquetes[1].descripcion}} </p>
+                      <p class="card-text"> <span>$</span>{{paquetes[1].precio}} </p>
+                      <button href="#" class="btn btn-primary"(click)="nuevoPaquete">Agregar</button>
+                    </div>
+                  </div>
+
+                  <div class="col" class="card" style="width: 18rem;">
+                    <img src={{paquetes[2].img}} class="card-img-top" alt="">
+                    <div class="card-body">
+                      <h5 class="card-title">{{paquetes[2].tour}} </h5>
+                      <p class="card-text">{{paquetes[2].descripcion}} </p>
+                      <p class="card-text"> <span>$</span>{{paquetes[2].precio}} </p>
+                      <button href="#" class="btn btn-primary"(click)="nuevoPaquete">Agregar</button>
+                    </div>
+                  </div>
+                  
+            </div>
+        </div>
+        
+          <table class="table">
+            <thead>
+                <tr>
+                    <th>TOURS</th>
+                    <th>PAQUETE</th>
+                    <th>PRECIO</th> 
+                    <th></th>  
+                </tr>
+            </thead>
+
+            <tbody class="table-group-divider">
+                <tr *ngFor="let carro of paquetes ;index as i">
+                    <td>{{ carro.img}}</td>
+                    <td>{{ carro.tour }}</td>
+                    <td>{{ carro.descripcion }}</td>
+                    <td>{{ carro.precio }}</td>
+                    <td>  <button (click)="eliminarPaquete(i)">Eliminar</button></td>
+                </tr>
+            </tbody>
+          </table>
+        
+          <div class="container text-center">
+            <div class="row">
+                <h1>Datos del Pago</h1>
+                <div class="col">
+                    <label >Numero de tarjeta:</label>
+                    <input type="text" >
+                    <br/>
+                    <label >Cod. Seguridad: </label>
+                    <input type="number" >
+                    <br/>
+                </div>
+                <div class="col">
+                  <label >Fecha de Caducidad: </label>
+                  <input type="text" >
+                  <br/>
+                </div>
+                <h1>Informacion de Facturacion</h1>
+                <div class="col">
+                    <label >Nombres: </label>
+                    <input type="number" >
+                    <br/>
+                    <label >Apellidos: </label>
+                    <input type="text" >
+                    <br/>
+                    <label >Cod. Postal o Zip: </label>
+                    <input type="text" >
+                    <br/>
+                    <label >Pais: </label>
+                    <input type="text" >
+                    <br/>
+                </div>
+                <div class="col">
+                    <label >Localidad: </label>
+                    <input type="text" >
+                    <br/>
+                    <label >Direccion de Facturacion: </label>
+                    <input type="text" >
+                    <br/>
+                    <label >Direccion de Facturacion (segunda linea): </label>
+                    <input type="text" >
+                    <br/>
+                    <label >Telefono: </label>
+                    <input type="text" >
+                    <br/>
+                </div>
+                <h1></h1>
+                <div class="col">
+                    <button type="submit">Confirmar</button>
+                </div>
+                <div class="col">
+                    <button type="submit">Cancelar</button>
+                </div>
+            </div>
+          </div>
+
+    </main>
+
+     <footer class="text-center text-lg-start bg-light text-muted">
+            <div class="row mt-5"></div>
+            <!-- Section: Social media -->
+            <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+              <!-- Left -->
+              <div class="me-5 d-none d-lg-block">
+                <span>Visitanos en:</span>
+              </div>
+              <!-- Left -->
+          
+              <!-- Right -->
+              <div>
+                <a href="" class="me-4 text-reset">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </div>
+              <!-- Right -->
+            </section>
+            <!-- Section: Social media -->
+          
+            <!-- Section: Links  -->
+            <section class="">
+              <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                  <!-- Grid column -->
+                  <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <!-- Content -->
+                    <h3 class="text-uppercase fw-bold mb-4">
+                      <i class="fas fa-gem me-3"></i>AGENCIA DE VIAJES
+                    </h3>
+                  </div >
+                  <!-- Grid column -->
+          
+                  <!-- Grid column -->
+                  <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                      Paquetes
+                    </h6>
+                    <p>
+                      <a href="#!" class="text-reset">1 persona</a>
+                    </p>
+                    <p>
+                      <a href="#!" class="text-reset">2 personas</a>
+                    </p>
+                    <p>
+                      <a href="#!" class="text-reset">4 personas</a>
+                    </p>
+                  </div>
+                  <!-- Grid column -->
+          
+                  <!-- Grid column -->
+                  <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                      Reservas
+                    </h6>
+                    <p>
+                      <a href="#!" class="text-reset">Enero : Abril</a>
+                    </p>
+                    <p>
+                      <a href="#!" class="text-reset">Mayo : Agosto</a>
+                    </p>
+                    <p>
+                      <a href="#!" class="text-reset">Septiembre : Diciembre</a>
+                    </p>
+    
+                  </div>
+                  <!-- Grid column -->
+          
+                  <!-- Grid column -->
+                  <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">Contáctanos</h6>
+                    <p><i class="fas fa-home me-3"></i> Av. Del Sol 12-A Cusco, Perú</p>
+                    <p>
+                      <i class="fas fa-envelope me-3"></i>
+                      AgenciaDeViajes@gmail.com
+                    </p>
+                    <p><i class="fas fa-phone me-3"></i> 084-888888</p>
+                    <p><i class="fas fa-mobile me-3"></i> +51 948-9999999</p>
+                  </div>
+                  <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+              </div>
+            </section>
+            <!-- Section: Links  -->
+          
+            <!-- Copyright -->
+            <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+              © 2015 Copyright:
+              <a class="text-reset fw-bold" href="index.html">Agencia de viajes</a>
+            </div>
+            <!-- Copyright -->
+    </footer>
+</body>
