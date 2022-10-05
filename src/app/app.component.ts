@@ -8,9 +8,7 @@ import { Paquete } from './model/paquete.model';
 })
 export class AppComponent {
   titulo: string = 'T1U2';
-  imagen: string = 'https://www.oasysparquetematico.com/wp-content/uploads/2019/04/shutterstock_199591094-1280x720.jpg'
-  btn: boolean = false;
-  name: string = '';
+
 
   paquetes: Paquete[] = [{
     img: 'https://www.boletomachupicchu.com/gutblt/wp-content/uploads/2018/06/montana-siete-colores-informacion.jpg',
@@ -19,30 +17,18 @@ export class AppComponent {
     precio: 250
   },
   {
-    img: 'https://www.boletomachupicchu.com/gutblt/wp-content/uploads/2018/06/montana-siete-colores-informacion.jpg',
-    tour: 'Ollantaytambo',
-    descripcion: 'A unos 100 kilómetros al sureste de Cusco, Perú, existe un arcoíris hecho montaña.',
+    img: 'https://www.boletomachupicchu.com/gutblt/wp-content/uploads/2018/10/palcoyo.jpg',
+    tour: 'Cordillera de Palccoyo',
+    descripcion: '-----',
     precio: 400
   },
   {
-    img: 'https://www.boletomachupicchu.com/gutblt/wp-content/uploads/2018/06/montana-siete-colores-informacion.jpg',
-    tour: 'MachuPicchu',
-    descripcion: 'A unos 100 kilómetros al sureste de Cusco, Perú, existe un arcoíris hecho montaña.',
+    img: 'https://cdn.getyourguide.com/img/tour/5d187adc926b0.jpeg/146.jpg',
+    tour: '4 Ruinas en Cusco',
+    descripcion: '------',
     precio: 300
   }
   ]
-
-  nuevo(i = 0) {
-    var aux = i
-    if (aux == 0) {
-       this.paquetes[aux]
-     
-
-    } else {
-       this.paquetes[aux]
-      
-    }
-  }
 
   t_img: string = '';
   t_tour: string = '';
@@ -62,10 +48,11 @@ export class AppComponent {
     this.t_des = '';
     this.t_pre = 0;
   }
+
   eliminarPaquete(posicion: number): void {
     this.paquetes.splice(posicion, 1)
   }
 }
 
-// EMPIEZA DESDE AQUI
+
 
